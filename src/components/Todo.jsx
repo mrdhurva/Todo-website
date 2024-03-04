@@ -8,11 +8,16 @@ function Todo() {
 
   let finalValue = ({ target: { value } }) => {
     setTask(value);
+    console.log(value)
   };
 
   let addTask = () => {
-    setItems([...items,task]);
-    setTask('');
+    if(task!==''){
+      setItems([...items,task]);
+      setTask('');
+    }else{
+      alert('Input must contain value')
+    }
   };
 
 let deleteTask=(index)=>{
